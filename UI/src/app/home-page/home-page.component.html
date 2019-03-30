@@ -1,0 +1,100 @@
+<body>
+
+<div>
+  <h1 class="h">Regnant Chess Championship!!!</h1>
+  <h1 class="h">
+    Chess is a war over the board. The object is to crush the opponents mind.
+  </h1>
+  <h1>TOURNAMENT DATES</h1>
+  <h1>From : 20-feb-2019</h1>
+  <h1 class="to">To : 28-feb-2019</h1>
+  <button
+    class="but"
+    onclick="document.getElementById('id01').style.display='block'"
+    style="width:auto;"
+  >
+    REGISTER SOLDIERS</button
+  ><br /><br /><br />
+  <button
+    class="but"
+    onclick="document.getElementById('id02').style.display='block'"
+    style="width:auto;"
+  >
+    LOGIN
+  </button>
+</div>
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="sucess">
+    <div class="imgcontainer">
+      <span
+        onclick="document.getElementById('id01').style.display='none'"
+        class="close"
+        title="Close Modal"
+        >×</span
+      >
+    </div>
+
+    <div class="container">
+      <label><b>User Name</b></label>
+      <input type="text" placeholder="UserName" name="name" required />
+      <label><b>Email id</b></label>
+      <input type="email" placeholder="Email id" name="email" required />
+
+      <label><b>Phone Number</b></label>
+      <input type="text" placeholder="Phone Number" name="mobile" required />
+
+      <label><b>password</b></label>
+      <input type="password" placeholder="password" name="password" required />
+
+      <button type="submit" class="login">SUBMIT</button>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  <form class="modal-content animate" action="Login" method="post">
+    <div class="imgcontainer">
+      <span
+        onclick="document.getElementById('id02').style.display='none'"
+        class="close"
+        title="Close Modal"
+        >×</span
+      >
+    </div>
+
+    <div class="container">
+      <label><b>Email id</b></label>
+
+      <input type="email" placeholder="Email id" name="email" required [(ngModel)]="emailid" />
+
+      <label><b>password</b></label>
+      <input type="password" placeholder="password" name="password" required [(ngModel)]="loginpassword" />
+
+      <button type="submit" class="login" (click)="logindetails()">SUBMIT</button>
+      <br />
+      <a href="home?task=forgot">FORGOTPASSWORD</a>
+    </div>
+    <!-- <a href="view/forgetpassword.jsp">FORGOTPASSWORD</a> -->
+  </form>
+</div>
+</body>
+<script>
+  // Get the modal
+  var modal = document.getElementById("id01");
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  var login = document.getElementById("id02");
+
+  //When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == login) {
+      modal.style.display = "none";
+    }
+  };
+</script>
